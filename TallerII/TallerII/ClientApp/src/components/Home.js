@@ -10,7 +10,7 @@ export class Home extends Component {
             <p><b>Estudiante:</b> Rolando Cerdas Delgado</p>
             <p><b>Profesor:</b> Esteban Pineda</p>
             <p><b>Curso:</b> Desarrollo de aplicaciones web</p>
-            <p><b>Carrera:</b> Ing. Informática</p>
+            <p><b>Carrera:</b> Ing. Informatica</p>
         </div>
     );
   }
