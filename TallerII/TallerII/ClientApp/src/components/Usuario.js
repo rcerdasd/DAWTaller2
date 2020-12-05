@@ -57,10 +57,10 @@ export class Usuario extends Component {
     }
 
     async crearUsuario() {
-        console.log(this.state.proveedor)
+        console.log(this.state.usuario)
         await fetch('api/usuarios', {
             method: 'POST',
-            body: JSON.stringify(this.state.proveedor),
+            body: JSON.stringify(this.state.usuario),
             headers: {
                 'content-type': 'application/json'
             }
@@ -70,6 +70,32 @@ export class Usuario extends Component {
             }).catch(error => console.log(error));
 
     }
+
+
+    copyEmptyRow() {
+        return Object.assign({}, Usuario.usuario);
+    }
+
+    toggleEditModal(rowData) {
+        // If the method is called with row data, 'Edit' was clicked, we set the currentRow to it
+        // If not, it means 'New' or 'Cancel' was clicked, so we set it to an empty row
+        let currentRow = (rowData ? rowData : this.copyEmptyRow())
+        this.setState({
+            editModal: !this.state.editModal,
+            currentRow: currentRow,
+        })
+    }
+
+    toggleDeleteModal(rowData) {
+        // If the method is called with row data, 'Edit' was clicked, we set the currentRow to it
+        // If not, it means 'New' or 'Cancel' was clicked, so we set it to an empty row
+        let currentRow = (rowData ? rowData : this.copyEmptyRow())
+        this.setState({
+            deleteModal: !this.state.deleteModal,
+            currentRow: currentRow,
+        })
+    }
+
 
     static renderUserTable(user, objeto) {
         return (
@@ -139,7 +165,7 @@ export class Usuario extends Component {
                                         id="codUsuario"
                                         name="codUsuario"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     />
                                 </div>
                             </div>
@@ -151,7 +177,7 @@ export class Usuario extends Component {
                                         id="primerApell"
                                         name="primerApell"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     />
                                 </div>
                             </div>
@@ -163,7 +189,7 @@ export class Usuario extends Component {
                                         id="secApellido"
                                         name="secApellido"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     />
                                 </div>
                             </div>
@@ -175,7 +201,7 @@ export class Usuario extends Component {
                                         id="login"
                                         name="login"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     /></div>
                             </div>
                             <div className="form-group row">
@@ -186,7 +212,7 @@ export class Usuario extends Component {
                                         id="pass"
                                         name="pass"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     /></div>
                             </div>
                             <div className="form-group row">
@@ -197,7 +223,7 @@ export class Usuario extends Component {
                                         id="pass2"
                                         name="pass2"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     /></div>
                             </div>
                             <div className="form-group row">
@@ -208,7 +234,7 @@ export class Usuario extends Component {
                                         id="tel"
                                         name="tel"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     /></div>
                             </div>
                             <div className="form-group row">
@@ -219,7 +245,7 @@ export class Usuario extends Component {
                                         id="telefono"
                                         name="telefono"
                                         className="form-control"
-                                        onChange={this.handleChange}
+                                        onChange={this.handleChangeCodigo}
                                     /></div>
                             </div>                            
                             <div>
