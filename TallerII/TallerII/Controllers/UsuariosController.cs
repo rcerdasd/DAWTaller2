@@ -10,7 +10,7 @@ using TallerII.Models;
 
 namespace TallerII.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/usuarios")]
     [ApiController]
     public class UsuariosController : ControllerBase
     {
@@ -96,8 +96,26 @@ namespace TallerII.Controllers
 
         // DELETE api/<UsuariosController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
+            try
+            {
+                var usuario = context.Usuarios.FirstOrDefault(r => r.Cod_Usuario == id);
+                if (usuario != null)
+                {
+                    context.Usuarios.Remove(usuario);
+                    context.SaveChanges();
+                    return Ok(id);
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }
