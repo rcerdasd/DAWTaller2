@@ -128,23 +128,91 @@ export class Usuario extends Component {
                 {contents}
                 
                 <Modal isOpen={this.state.modal}>
-                    <ModalHeader>Crear Proveedor</ModalHeader>
+                    <ModalHeader>Crear Usuario</ModalHeader>
                     <ModalBody>
                         <div className="form-group">
                             <div className="form-group row">
-                                <label for="nombre_Proveedor" className="col-sm-2 col-form-label">Nombre</label>
+                                <label for="codUsuario" className="col-sm-2 col-form-label">ID</label>
                                 <div className="col-sm-10">
                                     <input
                                         type="text"
-                                        id="nombre_Proveedor"
-                                        name="nombre_Proveedor"
+                                        id="codUsuario"
+                                        name="codUsuario"
                                         className="form-control"
                                         onChange={this.handleChange}
                                     />
                                 </div>
                             </div>
                             <div className="form-group row">
-                                <label for="telefono" className="col-sm-2 col-form-label">Telefono</label>
+                                <label for="primerApell" className="col-sm-2 col-form-label">Primer apellido</label>
+                                <div className="col-sm-10">
+                                    <input
+                                        type="text"
+                                        id="primerApell"
+                                        name="primerApell"
+                                        className="form-control"
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label for="secApellido" className="col-sm-2 col-form-label">Segundo apellido</label>
+                                <div className="col-sm-10">
+                                    <input
+                                        type="text"
+                                        id="secApellido"
+                                        name="secApellido"
+                                        className="form-control"
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
+                            </div>
+                            <div className="form-group row">
+                                <label for="login" className="col-sm-2 col-form-label">Login</label>
+                                <div className="col-sm-10">
+                                    <input
+                                        type="text"
+                                        id="login"
+                                        name="login"
+                                        className="form-control"
+                                        onChange={this.handleChange}
+                                    /></div>
+                            </div>
+                            <div className="form-group row">
+                                <label for="pass" className="col-sm-2 col-form-label">Password</label>
+                                <div className="col-sm-10">
+                                    <input
+                                        type="text"
+                                        id="pass"
+                                        name="pass"
+                                        className="form-control"
+                                        onChange={this.handleChange}
+                                    /></div>
+                            </div>
+                            <div className="form-group row">
+                                <label for="pass2" className="col-sm-2 col-form-label">Password2</label>
+                                <div className="col-sm-10">
+                                    <input
+                                        type="text"
+                                        id="pass2"
+                                        name="pass2"
+                                        className="form-control"
+                                        onChange={this.handleChange}
+                                    /></div>
+                            </div>
+                            <div className="form-group row">
+                                <label for="tel" className="col-sm-2 col-form-label">Telefono</label>
+                                <div className="col-sm-10">
+                                    <input
+                                        type="text"
+                                        id="tel"
+                                        name="tel"
+                                        className="form-control"
+                                        onChange={this.handleChange}
+                                    /></div>
+                            </div>
+                            <div className="form-group row">
+                                <label for="telefono" className="col-sm-2 col-form-label">Telefono 2</label>
                                 <div className="col-sm-10">
                                     <input
                                         type="text"
@@ -153,20 +221,9 @@ export class Usuario extends Component {
                                         className="form-control"
                                         onChange={this.handleChange}
                                     /></div>
-                            </div>
-                            <div className="form-group row">
-                                <label for="direccion" className="col-sm-2 col-form-label">Dirección</label>
-                                <div className="col-sm-10">
-                                    <input
-                                        type="text"
-                                        id="direccion"
-                                        name="direccion"
-                                        className="form-control"
-                                        onChange={this.handleChange}
-                                    /></div>
-                            </div>
+                            </div>                            
                             <div>
-                                <button className="btn btn-success" onClick={() => this.crearProveedor()}>Guargar</button>
+                                <button className="btn btn-success" onClick={() => this.crearUsuario()}>Guargar</button>
                                 <button className="btn btn-dark" onClick={() => this.abrirCerrarModal()}>Cancelar</button>
                             </div>
                         </div>
